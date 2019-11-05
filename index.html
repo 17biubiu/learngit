@@ -15,58 +15,5 @@
   <div>1+2</div>
 </body>
 <script>
-function deepClone (source) {
-  let target = {}
-  for (var i in source) {
-    if (Object.prototype.hasOwnProperty.call(source, i)) {
-      if (typeof source[i] === 'object') {
-        target[i] = cloneDeep(source[i])
-      } else {
-        target[i] = source[i]
-      }
-    }
-  }
-}
-
-
-
-
-
-
-
-
-
-
- function create () {
-   let obj = new Object()
-   let Args = [].shift.call(arguments)
-   obj.__proto__ = Args.prototype
-   let ret = Args.apply(obj, arguments)
-   return ret instanceof Object ? ret : obj
- }
-
-
-
- Object.defineProperty(obj, 'clone', {
-   value: function (target) {
-    if (target === null) {
-      throw new TypeError('kakak')
-    }
-    var to = Object(target)
-    for (var i = 0; i < arguments.length; i++) {
-      var nextSource = arguments[i]
-      if (nextSource !== null) {
-        for (var nextKey in nextSource) {
-          if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-            to[nextKey] = nextSource[nextKey]
-          }
-        }
-      }
-    }
-    return to
-   },
-   writable: true,
-   configurable: true
- })
 </script>
 </html>
